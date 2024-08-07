@@ -16,14 +16,16 @@
               <h:inputText id="firstName" 
                            label="First Name"
                            value="#{student.firstName}"
-                           required="true">
+                           required="true"
+                           validator="#{alphaValidator.validateAlpha}">
               </h:inputText>
               <h:outputLabel for="lastName" value="Last Name:">
               </h:outputLabel>
               <h:inputText id="lastName"
                            label="Last Name"
                            value="#{student.lastName}"
-                           required="true">
+                           required="true"
+                           validator="#{alphaValidator.validateAlpha}">
               </h:inputText>
               <h:outputLabel for="email" value="Email:">
               </h:outputLabel>
