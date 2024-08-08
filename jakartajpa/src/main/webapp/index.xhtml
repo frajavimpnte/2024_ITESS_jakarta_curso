@@ -10,6 +10,13 @@
     <h:body>
         <h1>Hello from Facelets ITESS-Patzcuaro JPA.</h1>
         
+        <h2> Get student List </h2>
+        <h:form id="studentFormList">
+            <h:commandLink value="Get student list" 
+                           action="#{studentController.getStudents()}" />
+        </h:form>
+        
+        <h2> Add student form: </h2>
         <h:form id="studentForm">
             <h:messages/>
             <h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">

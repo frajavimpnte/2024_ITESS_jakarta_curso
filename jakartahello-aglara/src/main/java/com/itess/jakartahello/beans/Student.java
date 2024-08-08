@@ -1,10 +1,16 @@
-package com.fjmp.itess.jakartajpa.beans;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.itess.jakartahello.beans;
+
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
+
 public class Student {
     private String firstName;
     private String lastName;
@@ -32,5 +38,5 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }        
 }

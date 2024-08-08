@@ -1,0 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 ago. 2024, 13:57:52
+    Author     : Al-Design
+*/
+
+ul, li::marker {
+  content: '✝ ';
+  font-size: 1.2em;
+  text-indent: 0px;
+}
