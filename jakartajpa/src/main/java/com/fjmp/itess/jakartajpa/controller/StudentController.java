@@ -19,10 +19,30 @@ public class StudentController implements Serializable {
     private StudentBean studentBean;
     
     private List<Student> studentList;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+    
+    
     
     public List<Student> getStudentList() {
         return this.studentList;
     }
+    
+    public String  saveStudent() {
+        try {
+            studentBean.saveStudent(student);
+        } catch (Exception e){
+            return "error";
+        }
+        return getStudents();
+    }
+    
     public String getStudents() {
         studentList = studentBean.getStudents();
         

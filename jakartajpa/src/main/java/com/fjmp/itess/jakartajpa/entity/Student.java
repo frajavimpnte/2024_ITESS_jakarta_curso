@@ -23,7 +23,8 @@ public class Student implements Serializable {
     private String lastName;
     
     private String email;
-
+    
+   
     public Long getStudentId() {
         return studentId;
     }
