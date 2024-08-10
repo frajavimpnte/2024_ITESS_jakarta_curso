@@ -49,115 +49,69 @@
     </div>
   </div>
 </nav>
-        
-        <h1 class="text-center mt-5 mb-5"> Iniciar sesión</h1>
-        <!--asise agregauna imagen-->
-        <!-- 
-        <div class="container "> 
-        <h:form>
-            <fieldset class="bg-light p-5 rounded-3 shadow">
-                <h4 class="text-center p-2">Ingresa correctamente tus datos</h4>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"></input>
-  </div>
-  <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-    </fieldset>
-</h:form>
-    </div>
-        comment -->
-        <!--
-        <div class="container">
-            <h:form>
-                <fieldset class="mt-4 bg-light p-5 rounded-3 shadow">
-                     <h4 class="text-center p-2">Ingresa correctamente tus datos</h4>
-                    <div class="mb-3">
-                <h:outputLabel class="form-label" for="name" value="Nombre:"/>
-                <h:inputText  class="form-control" id="name" value="#{user.name}"/>
-                    </div>
-                    <div class="mb-3">
-                <h:outputLabel class="form-label" for="email" value="E-mail:"/>
-                <h:inputText  class="form-control" id="email" value="#{user.email}"/>
-                    </div>
-                    <div class="mb-3">
-                <h:outputLabel class="form-label" for="created" value="Created:"/>
-                <h:inputText  class="form-control" id="created" value="#{user.created}">
-                    <f:convertDateTime type="localDate" pattern="dd/MM/uuuu"/>
-                </h:inputText>    
-                    </div>
-                    <div class="mb-3">
-                <h:outputLabel for="expire" value="Expire:"/>
-                <h:inputText class="form-control" id="expire" value="#{user.expires}">
-                    <f:convertDateTime type="localDate" pattern="dd/MM/uuuu"/>
-                </h:inputText>
-                    </div>
-                    <div class="mb-3">
-                <h:commandButton class="btn btn-primary" value="submit" type="submit" action="#{user.valid()}"/>
-                    </div>
-                </fieldset>
-            </h:form>
-        </div>  
-        -->
-        
+      
+      
+
       <!--  <h:graphicImage library="images" class="img-fluid" name="hero.jpg"></h:graphicImage>-->
       <div class="container">
+        <h1 class="text-center"> Get student List </h1>
+        <h:form id="studentFormList" class="">
+            <div   class="text-center ">
+                <h:commandLink  class="btn btn-success" value="Get student list" 
+                           action="#{studentController.getStudents()}" />
+            </div>
+        </h:form>   
+        
+        <h1 class="text-center mt-5 mb-5"> Iniciar sesión</h1>  
+          
          <h:form id="studentForm">
              <fieldset class="mt-4 bg-light p-5 rounded-3 shadow">
-                 <div class="px-3 m-0 py-0 alert border-0 alert-danger">
+                <div class="px-3 m-0 py-0 alert border-0 alert-danger">
                      <h:messages class="py-3"/>
-                 </div>
-          <div class="mb-3">
-        <h:outputLabel class="form-label" for="firstName" value="First Name:">
-        </h:outputLabel>
-        <h:inputText class="form-control" id="firstName"
-          label="First Name"
-          value="#{student.firstName}"
-          pt:placeholder="Tu nombre es:"
-          required="true"
-          validator="#{alphaValidator.validateAlpha}">
-          <f:validateLength minimum="2" maximum="30"/>
-        </h:inputText>
-        </div>
-      <div class="mb-3">
-        <h:outputLabel class="form-label" for="lastName" value="Last Name:">
-        </h:outputLabel>
-        <h:inputText class="form-control" id="lastName"
-                     label="Last Name"
-                     value="#{student.lastName}"
-                     pt:placeholder="Tu apellido es:"
-                     required="true"
-                     validator="#{alphaValidator.validateAlpha}">
-                     <f:validateLength minimum="2" maximum="30"/>
-        </h:inputText>
-      </div>
-      <div class="mb-3">
-        <h:outputLabel class="form-label" for="email" value="Email:">
-        </h:outputLabel>
-        <h:inputText class="form-control" id="email"
-          label="Email"
-          pt:placeholder="Escribe tu correo"
-          value="#{student.email}">
-          <f:validateLength minimum="3" maximum="30"/>
-          <f:validator validatorId="emailValidator" />
-        </h:inputText>
-      </div>
-      <div class="mb-3 d-grid gap-2">
-        <h:panelGroup></h:panelGroup>
-        <h:commandButton class="btn btn-primary " action="information" value="Save">
-        </h:commandButton>
-      </div>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel class="form-label" for="firstName" value="First Name:">
+                    </h:outputLabel>
+                    <h:inputText class="form-control" id="firstName"
+                        label="First Name"
+                        value="#{studentController.student.firstName}"
+                        pt:placeholder="Tu nombre es:"
+                        required="true"
+                        validator="#{alphaValidator.validateAlpha}">
+                            <f:validateLength minimum="2" maximum="30"/>
+                    </h:inputText>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel class="form-label" for="lastName" value="Last Name:">
+                    </h:outputLabel>
+                    <h:inputText class="form-control" id="lastName"
+                                 label="Last Name"
+                                 value="#{studentController.student.lastName}"
+                                 pt:placeholder="Tu apellido es:"
+                                 required="true"
+                                 validator="#{alphaValidator.validateAlpha}">
+                                 <f:validateLength minimum="2" maximum="30"/>
+                    </h:inputText>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel class="form-label" for="email" value="Email:">
+                    </h:outputLabel>
+                    <h:inputText class="form-control" id="email"
+                      label="Email"
+                      pt:placeholder="Escribe tu correo"
+                      value="#{studentController.student.email}">
+                      <f:validateLength minimum="3" maximum="30"/>
+                      <f:validator validatorId="emailValidator" />
+                    </h:inputText>
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <h:panelGroup></h:panelGroup>
+                    <h:commandButton class="btn btn-primary " action="information" value="Save">
+                    </h:commandButton>
+                </div>
 
       
-             </fieldset>
+      </fieldset>
     </h:form>    
           
       </div>

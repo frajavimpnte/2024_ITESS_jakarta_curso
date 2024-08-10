@@ -2,20 +2,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.itess.jakartahello.beans;
+package com.itess.jakartahello.entity;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-
-@Named
-@RequestScoped
-
-public class Student {
+@Entity
+@Table(name = "STUDENTS")
+public class Student implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "STUDENT_ID")
+    private Long   studentId;
+    
+    @Column(name = "FIRST_NAME")
     private String firstName;
+    
+    @Column(name = "LAST_NAME")
     private String lastName;
+    
     private String email;
 
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+    
     public String getFirstName() {
         return firstName;
     }
