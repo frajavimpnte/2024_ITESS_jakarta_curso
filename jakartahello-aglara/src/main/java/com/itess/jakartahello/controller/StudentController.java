@@ -37,12 +37,7 @@ public class StudentController implements Serializable {
         return studentBean;
     }
 
-    public void setStudentBean(StudentBean studentBean) {
-        this.studentBean = studentBean;
-    }
-    
-    
-    
+      
     public String getStudents() {
         studentList = studentBean.getStudents();
         
